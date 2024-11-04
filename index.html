@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body id="body">
+    
+    <div id="main">
+        <h1 id="h1"> What is your name?</h1>
+        <div id="all">
+        <div id="comment"></div>
+        <input id="input" type="text">
+        <button id="btn">Click Here</button>
+        <button id="ref">Refresh</button>
+    </div>
+    </div>
+    
+    <script>
+ let body = document.getElementById('body').style.backgroundColor = "pink";
+ const main =document.getElementById('main');
+  main.style.width = '350px';
+  main.style.height = '300px';
+  main.style.backgroundColor = 'gray';
+  main.style.margin = '0 auto';
+  main.style.padding = '10px';
+  main.style.marginTop = '50px';
+  main.style.borderRadius = ' 70px 20px 70px 20px';
+  main.style.border = ' 2px solid black';
+ 
+  let h1 = document.getElementById('h1');
+  h1.style.color = 'white'
+  h1.style. marginTop = "20px"
+  h1.style. marginLeft = "30px";
+ 
+
+  let ref =document.getElementById('ref');
+  
+  ref.style.padding = '9px 10px';
+  ref.style.border = '1px solid black';
+  ref.style.borderRadius = '70px 20px 70px 20px'
+  let all = document.getElementById('all');
+   all.style.marginTop = '100px'
+   all.style.position = 'fixed'
+
+ 
+
+  let input = document.getElementById('input');
+  input.style.padding ='9px 10px'
+  input.style.borderRadius ='70px 20px 70px 20px'
+  input.style.border ='1px solid black';
+  input.setAttribute('placeholder', 'Enter your name');
+  input.style.fontStyle = "italic"
+  
+
+  let btn1 =document.getElementById('btn');
+  btn1.style.border = '1px solid black'
+  btn1.style.borderRadius = '70px 20px 70px 20px'
+  btn1.style.padding = '9px 10px'
+  btn1.addEventListener('click', function(){
+    let inputValue = input.value;
+    if (inputValue){
+        let commentlist = document.createElement('div');
+        commentlist.classList.add('commentBox');
+        commentlist.textContent = inputValue;
+        let comment = document.getElementById('comment');
+        comment.appendChild(commentlist);
+        input.value = "";
+    }
+ const ref =document.getElementById('ref');
+ ref.addEventListener('click', function(){
+    location.reload()
+ })
+  })
+    </script>
+</body>
+</html>
